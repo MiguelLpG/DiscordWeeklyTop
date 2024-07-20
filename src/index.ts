@@ -101,7 +101,7 @@ async function postWeeklyTop() {
         topVoiceMessage += `${index + 1}. <@${user.userId}>: ${Math.floor(user.voiceTime / 60)} minutos.\n`;
     });
 
-    const channel = client.channels.cache.get('1256229703648542891') as TextChannel;
+    const channel = client.channels.cache.get(process.env.CHANNELID!) as TextChannel;
     if (channel) {
         channel.send(topMessage);
         channel.send(topVoiceMessage);
